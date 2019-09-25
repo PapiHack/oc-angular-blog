@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <h1> {{ title }} </h1>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="form-group">
+        <label for="title">
+          Titre du post
+        </label>
+        <input type="text" id="title" name="title" class="form-control" required ngModel>
+      </div>
+      <div class="form-group">
+        <label for="content">
+          Contenu du post
+        </label>
+        <textarea cols="30" rows="5" id="content" name="content" class="form-control" required ngModel></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Ajouter</button>
+      <a [routerLink]="['/posts']" class="pull-right">Annuler et retourner au blog</a>
+    </form>
+  </div>
+</div>
